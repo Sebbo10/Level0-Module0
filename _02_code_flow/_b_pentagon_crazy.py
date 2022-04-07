@@ -33,7 +33,7 @@ if __name__ == '__main__':
     # Create a variable to be the angle of 360 divided by the sides variable
     angle = 360/sides
 
-    for i in range (360):
+    for i in range (1080):
         if i==100:
             tooty.width(2)
         if i==200:
