@@ -36,10 +36,9 @@ class Eye:
 def screen_clicked(x, y):
     print('You pressed: x=' + str(x) + ', y=' + str(y))
 
+    def key_pressed():
+        print('You pressed the space key')
 
-def key_pressed():
-    print('You pressed the space key')
-    
     # LASER BEAM.  This code will make your ellipse move down and to the right
     # when you press the space bar. Run the program to test it.
 
@@ -47,7 +46,8 @@ def key_pressed():
     #     left_eye.x += 5
     
     # 11. Call the .draw() method for both eye variables.
-
+    left_eye.draw()
+    right_eye.draw()
 
 if __name__ == '__main__':
     window = turtle.Screen()
@@ -58,19 +58,20 @@ if __name__ == '__main__':
     #    c. Rename the image something short (e.g. cat.gif)
     #    d. Save the image to your computer's desktop
     #    e. Drag and drop the image into this python package
-    
+    cat='bigEyedCat.gif'
     # 2. Call the set_background() function with your variable inside of the parenthesis
     #    for example, set_background(bg_image)
-
+    set_background(cat)
     # 3. Make a new turtle
-
+    tooty = turtle.Turtle()
     # 4. Set the turtle color and pen color to red (or any color you want)
     #    using .color('red', 'red')
-
+    tooty.color('red')
+    tooty.pencolor('red')
     # 5. Set the turtle width to 0 so no outlines are drawn
-
+    tooty.width(0)
     # 6. Set the turtle speed to 0 (fastest)
-
+    tooty.speed(0)
     # 7. Run the program and click on one of the cat's eyes. 
     #    The x,y position of the eye will be printed at the bottom of your
     #    processing window.
@@ -80,14 +81,14 @@ if __name__ == '__main__':
     
     # 8. After you've found the x and y for the eyes create 2 eye variables
     #    and initialize them:
-    #    left_eye  = Eye(eye=my_turtle, x=-34, y=11, radius=30)
-    #    right_eye = Eye(eye=my_turtle, x=40, y=-5, radius=30)
+    left_eye = Eye(eye=tooty, x=45, y=-6, radius=30)
+    right_eye = Eye(eye=tooty, x=-30, y=10, radius=30)
 
     # 9. Call the .draw() method on BOTH eye variables
-
-
+    left_eye.draw()
+    right_eye.draw()
 # ===================== DO NOT EDIT THE CODE BELOW ============================
     window.onclick(screen_clicked)
-    window.onkeypress(key_pressed, 'space')
+    #window.onkeypress(key_pressed, 'space')
     window.listen()
     turtle.done()
